@@ -1,0 +1,43 @@
+{
+    "name": "mj-zana/view-markdown",
+    "description": "Safe Markdown rendering for mj-zana/view, on league/commonmark",
+    "type": "library",
+    "keywords": ["zana", "view", "markdown", "commonmark"],
+    "license": "MIT",
+    "require": {
+        "php": "^8.5",
+        "league/commonmark": "^2.6",
+        "mj-zana/view": "^2.2"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zana\\View\\Markdown\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zana\\View\\Markdown\\Tests\\": "tests/"
+        }
+    },
+    "repositories": [
+        { "type": "path", "url": "../zana-container", "options": { "symlink": true, "versions": { "mj-zana/container": "2.2.0" } } },
+        { "type": "path", "url": "../zana-configuration", "options": { "symlink": true, "versions": { "mj-zana/configuration": "2.2.0" } } },
+        { "type": "path", "url": "../zana-core", "options": { "symlink": true, "versions": { "mj-zana/core": "2.2.0" } } },
+        { "type": "path", "url": "../zana-http", "options": { "symlink": true, "versions": { "mj-zana/http": "2.2.0" } } },
+        { "type": "path", "url": "../zana-routing", "options": { "symlink": true, "versions": { "mj-zana/routing": "2.2.0" } } },
+        { "type": "path", "url": "../zana-view", "options": { "symlink": true, "versions": { "mj-zana/view": "2.2.0" } } }
+    ],
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan analyse --memory-limit=1G"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

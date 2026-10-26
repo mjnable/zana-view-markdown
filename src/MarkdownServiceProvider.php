@@ -24,7 +24,7 @@ final class MarkdownServiceProvider extends ServiceProvider
         $services
             ->singleton(CommonMarkRenderer::class, static fn (ServiceResolverInterface $r): CommonMarkRenderer => new CommonMarkRenderer(
                 $r->get(ConfigurationInterface::class)->bool('view.markdown.heading_anchors', true),
-            ))
+            ))->uses(ConfigurationInterface::class)
             ->alias(MarkdownRendererInterface::class, CommonMarkRenderer::class);
     }
 
